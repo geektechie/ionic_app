@@ -3,16 +3,32 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>ChefyTricks</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+ <div class="row" style="padding-left: 5%; padding-right: 5%;" *ngFor="let r of recipes">
+    <div class="col-md-12  lib-item" data-category="view" style="padding: 15px;box-shadow: 0 0 7px black;margin-bottom: 25px; cursor: pointer;" (click)="details(r)">
+                <div class="lib-panel">
+                    <div class="row box-shadow">
+                        <div class="col-md-4" style="text-align: center;">
+                            <img class="" src="{{r.recipe.recipeImage.substr(r.recipe.recipeImage.lastIndexOf('http'),r.recipe.recipeImage.length)}}" height="200px" width="200px">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="lib-row lib-header" style="font-weight: 600;font-size: 30px;">
+                               {{r.recipe.recipeName}}
+                                <div class="lib-header-seperator"></div>
+                            </div>
+                            <div class="lib-row lib-desc" style="font-size: 20px;">
+                                {{r.recipe.recipeDescription}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+ </div>
 </ion-content>
