@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Recipe Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<div class="row" style="padding-left: 10%; padding-right: 10%;">
+ <div class="col-md-12  lib-item" data-category="view" style="padding: 15px;box-shadow: 0 0 7px black;margin-bottom: 25px; cursor: pointer;">
+                <div class="lib-panel">
+                    <div class="row box-shadow">
+                        <div class="col-md-4" style="text-align: center;">
+                            <img class="" src="{{details.recipe.recipeImage.substr(details.recipe.recipeImage.lastIndexOf('http'),details.recipe.recipeImage.length)}}" height="200px" width="200px">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="lib-row lib-header" style="font-weight: 600;font-size: 30px;">
+                               {{details.recipe.recipeName}}
+                                <div class="lib-header-seperator"></div>
+                            </div>
+                            <div class="lib-row lib-desc" style="font-size: 20px;">
+                                {{details.recipe.recipeDescription}}
+                            </div>
+                             <div class="lib-row lib-desc" style="font-size: 20px;">
+                               Serve : {{details.recipe.yield}}
+                            </div>
+                             <div class="lib-row lib-desc" style="font-size: 20px;">
+                               Prepare Time : {{details.recipe.cookTiming}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="row" style="padding-left: 10%; padding-right: 10%;">
+ 		<div class="col-md-12  lib-item" data-category="view" style="padding: 15px;box-shadow: 0 0 7px black;margin-bottom: 25px; cursor: pointer;">
+                <div class="lib-panel">
+                <h3 style="text-align: center;font-size: 40px;"><u>Ingredients</u></h3>
+                <hr>
+
+                <div *ngFor="let i of details.ingredients">
+
+                <div class="col-md-12 col-sm-12">
+                    <div class="row box-shadow">
+                        <div class="col-md-4 col-sm-12" style="font-size:15px;">
+                           <b> {{i.ingredientName}} :</b>
+                        </div>
+                        <div class="col-md-6 col-sm-12" style="font-size:15px;">
+                            <div class="lib-row lib-header" >
+                               {{i.quantity}}
+                                <div class="lib-header-seperator"></div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                 </div>
+
+                 </div>
+
+
+                </div>
+            </div>
+            </div>
+
+             <div class="row" style="padding-left: 10%; padding-right: 10%;">
+ 		<div class="col-md-12  lib-item" data-category="view" style="padding: 15px;box-shadow: 0 0 7px black;margin-bottom: 25px; cursor: pointer;">
+                <div class="lib-panel">
+                <h3 style="text-align: center;font-size: 40px;"><u>Steps</u></h3>
+                <hr>
+
+                <div *ngFor="let s of details.steps">
+
+                <div class="col-md-12 col-sm-12">
+                    <div class="row box-shadow">
+                        <div class="col-md-12 col-sm-12" style="padding: 12px;font-size:20px;font-weight:600;">
+                           <b> {{s.stepTitle}} :</b>
+                        </div>
+                         <div class="col-md-12 col-sm-12" style="padding: 12px;font-size:20px;">
+                       {{s.stepDescription}} 
+                        </div>
+                         <div class="col-md-12 col-sm-12" style="padding: 12px;text-align:center;">
+                            <img class="" src="{{s.stepImage.substr(s.stepImage.lastIndexOf('http'),s.stepImage.length)}}" height="500" width="700">
+                        </div>
+                    </div>
+                 </div>
+                 <hr>
+                 </div>
+
+
+                </div>
+            </div>
+            </div>
+
+</ion-content>
